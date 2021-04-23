@@ -64,9 +64,9 @@ public class calculer implements ActionListener {
 			numberButton[i].setFocusable(false);
 
 		}
-		
-		egButton.setBounds(200, 430, 50, 50);
-		plusButton.setBounds(150, 430, 50, 50);
+
+		clrButton.setBounds(150, 430, 50, 50);
+		egButton.setBounds(250, 430, 50, 50);
 		negButton.setBounds(50, 430, 100, 50); // je donne des dimensions a mes buttons
 
 		// Attention !! je dois revenir mettre en forme correctement les dim des buttons
@@ -75,20 +75,27 @@ public class calculer implements ActionListener {
 		panel.setBounds(50, 100, 300, 300);
 		panel.setLayout(new GridLayout(4, 4, 10, 10));// espace entre pannel de l'affochage du resultat et des nombres
 
-		for (int i = 0; i < 10; i++) {
-			panel.add(numberButton[i]); // j'ajoute les nombres au panel :D
-		}
-		// Attention je dois revenir re-structurer les buttons comme dans l'ex demandé
+		panel.add(numberButton[1]); // j'ajoute les nombres au panel :D
+		panel.add(numberButton[2]);
+		panel.add(numberButton[3]);
 		panel.add(plusButton);
+		// Attention je dois revenir re-structurer les buttons comme dans l'ex demandé
+		panel.add(numberButton[4]);
+		panel.add(numberButton[5]);
+		panel.add(numberButton[6]);
+		panel.add(numberButton[7]);
+		panel.add(numberButton[8]);
+		panel.add(numberButton[9]);
 		panel.add(moinsButton);
 		panel.add(mulButton);
 		panel.add(divButton);
+		panel.add(numberButton[0]);
 		panel.add(clrButton);
 		panel.add(egButton);
 		panel.add(verButton);
 		panel.add(negButton);
 
-		frame.add(panel);	// et la j'ajoute panel dans la Frame
+		frame.add(panel); // et la j'ajoute panel dans la Frame
 		frame.add(plusButton);
 		frame.add(moinsButton);
 		frame.add(mulButton);
@@ -152,7 +159,7 @@ public class calculer implements ActionListener {
 			case '*':
 				result = num1 * num2;
 				break;
-			case '-' :
+			case '-':
 				result = num1 - num2;
 				break;
 			case '/':
@@ -167,24 +174,20 @@ public class calculer implements ActionListener {
 			num1 = result; // ici je stock le résultat
 
 		}
-		
+
 		// la condition pour mon button clear
-		
-		if(e.getSource()== clrButton ) {
+
+		if (e.getSource() == clrButton) {
 			textfield.setText("");// c'est pour changer ce qui est affiché dans le textfiend
 		}
-		
-				//le button negatif 
-		if(e.getSource() == negButton)
-		{
+
+		// le button negatif
+		if (e.getSource() == negButton) {
 			double tempo = Double.parseDouble(textfield.getText());
-			tempo = tempo*-1;
+			tempo = tempo * -1;
 			textfield.setText(String.valueOf(tempo));
-			
+
 		}
-		
-		
-		
 
 	}
 }
